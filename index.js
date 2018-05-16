@@ -69,7 +69,7 @@ if (chainpoint['@context'] === 'https://w3id.org/chainpoint/v2') {
         console.log(err.message);
         process.exit(1);
     }
-} else if (chainpoint['@context'] !== 'https://w3id.org/chainpoint/v3') {
+} else if (chainpoint['@context'] === 'https://w3id.org/chainpoint/v3') {
     try {
         ConverOTS.checkValidHeaderChainpoint3(chainpoint);
         format = SupportedFormat.CHAINPOINTv3;
