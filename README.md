@@ -14,12 +14,16 @@ npm install
 ```
 
 ## Convert receipt
-1. Get a (chainpoint v2)[https://raw.githubusercontent.com/eternitywall/convert2ots/master/examples/chainpoint_v2.json] or (chainpoint v3)[https://raw.githubusercontent.com/eternitywall/convert2ots/master/examples/chainpoint_v3.json] receipt and save to `receipt.json` file.
+1. Get a [chainpoint v2](https://raw.githubusercontent.com/eternitywall/convert2ots/master/examples/chainpoint_v2.json) or [chainpoint v3](https://raw.githubusercontent.com/eternitywall/convert2ots/master/examples/chainpoint_v3.json) receipt and save to `receipt.json` file.
 2. Run conversion tool to generate `receipt.ots`
 ```
-$ node index.js --chainpoint examples/chainpoint.json --output receipt.ots
+$ node index.js --chainpoint receipt.json --output receipt.ots
 ```
-3. The default behaviour check and use the local Bitcoin node. 
+
+#### Command options
+* --type: Overwrite type value in receipt. [Stampery receipt](https://raw.githubusercontent.com/eternitywall/convert2ots/master/examples/stampery_v2.json) use unsupported type `BTA-SHA256` instead of `ChainpointSHA256v2`. Now supported types for chainpoint v2: `ChainpointSHA256v2`.
+* --nobitcoin: Use lite-verification with insight block explorer instead local Bitcoin node
+The default behaviour check and use the local Bitcoin node. 
 Otherwise, lite-verification process uses multi insight block explorer instead local Bitcoin node.
 To force to use lite-verification specify `--nobitcoin` option.
 ```
