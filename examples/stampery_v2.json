@@ -1,0 +1,18 @@
+{
+          "@context": "https://w3id.org/chainpoint/v2",
+          "type": "BTA-SHA256",
+          "targetHash": "E5892B2B44B51D2D718E59B526D94A76299E0DE0256F335B8C3D41F1A9FCA17D",
+          "merkleRoot": "E445D81ECA37B1D5CA02CEC7DDEE050293A76321592994A0700DF3DED6DE9034",
+          "anchors": [
+            {
+              "type": "BTCOpReturn",
+              "prefix": "5336FB55",
+              "sourceId": "ee485eb39c46c93c66af28feaf336ed32a2646dcef88e6008c711ad585a49761"
+            }
+          ],
+          "proof": [
+            {
+              "left": "EEDF5B84BEDFDD0E712F54B5BC4CDA2BFAD48135545A05AED27580777E9ED5C9"
+            }
+          ]
+}

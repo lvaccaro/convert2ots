@@ -23,28 +23,26 @@ const Notary = OpenTimestamps.Notary;
 module.exports = {
     // Check chainpoint receipt
 
-  checkValidHeaderChainpoint2(chainpoint) {
-    if (chainpoint['@context'] !== 'https://w3id.org/chainpoint/v2') {
-      return false;
-    }
-    if (chainpoint.type !== 'ChainpointSHA256v2') {
-      return false;
-    }
-    if (chainpoint.anchors === undefined) {
-      return false;
-    }
-    return true;
-  },
+    checkValidHeaderChainpoint2(chainpoint) {
+        if (chainpoint['@context'] !== 'https://w3id.org/chainpoint/v2') {
+            throw new Error('Invalid context: ' + chainpoint['@context'] );
+        }
+        if (chainpoint.type !== 'ChainpointSHA256v2') {
+            throw new Error('Unsupported type: ' + chainpoint.type );
+        }
+        if (chainpoint.anchors === undefined) {
+            throw new Error('Invalid anchors');
+        }
+    },
 
-  checkValidHeaderChainpoint3(chainpoint) {
-    if (chainpoint['@context'] !== 'https://w3id.org/chainpoint/v3') {
-      return false;
-    }
-    if (chainpoint.type !== 'Chainpoint') {
-      return false;
-    }
-    return true;
-  },
+    checkValidHeaderChainpoint3(chainpoint) {
+        if (chainpoint['@context'] !== 'https://w3id.org/chainpoint/v3') {
+            throw new Error('Invalid context: ' + chainpoint['@context'] );
+        }
+        if (chainpoint.type !== 'Chainpoint') {
+            throw new Error('Unsupported type: ' + chainpoint.type );
+        }
+    },
 
 // Migrate proofs
   migrationChainpoint2(targetHash, proof) {
